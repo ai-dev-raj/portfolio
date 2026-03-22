@@ -13,9 +13,26 @@ body {
     font-family:'Poppins', sans-serif;
     background: linear-gradient(135deg,#020617,#0f172a,#1e293b);
     color:white;
+    overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* BACKGROUND ANIMATION */
+body::before {
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: radial-gradient(circle,#38bdf820 1px, transparent 1px);
+    background-size:40px 40px;
+    animation: moveBg 10s linear infinite;
+    z-index:-1;
+}
+@keyframes moveBg {
+    0% {transform:translateY(0);}
+    100% {transform:translateY(-40px);}
+}
+
+/* NAV */
 nav {
     display:flex;
     justify-content:space-between;
@@ -28,6 +45,7 @@ nav a {color:white; margin:0 10px; text-decoration:none;}
 .hero {
     text-align:center;
     padding:80px 20px;
+    animation: fadeIn 1.5s ease;
 }
 .hero h1 {
     font-family:'Orbitron';
@@ -35,20 +53,26 @@ nav a {color:white; margin:0 10px; text-decoration:none;}
     color:#38bdf8;
 }
 
-/* IMAGE PERFECT FIX */
+/* IMAGE PERFECT */
 .avatar {
     width:180px;
     height:180px;
     border-radius:50%;
     object-fit:cover;
-    object-position: 50% 20%;
+    object-position: 50% 5%;
     border:4px solid #38bdf8;
     box-shadow:0 0 25px #38bdf8;
     margin-top:20px;
+    animation: float 3s ease-in-out infinite;
     transition:0.3s;
 }
 .avatar:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+    50% {transform:translateY(-10px);}
 }
 
 /* SECTION */
@@ -68,7 +92,7 @@ nav a {color:white; margin:0 10px; text-decoration:none;}
     transition:0.3s;
 }
 .card:hover {
-    transform: translateY(-10px);
+    transform:translateY(-10px);
     box-shadow:0 0 30px #38bdf8;
 }
 
@@ -81,6 +105,10 @@ nav a {color:white; margin:0 10px; text-decoration:none;}
     color:black;
     border-radius:10px;
     text-decoration:none;
+    transition:0.3s;
+}
+.btn:hover {
+    background:#a78bfa;
 }
 
 /* SKILLS */
@@ -88,12 +116,20 @@ nav a {color:white; margin:0 10px; text-decoration:none;}
     display:inline-block;
     background:linear-gradient(45deg,#38bdf8,#a78bfa);
     color:black;
-    padding:10px 15px;
+    padding:10px;
     margin:5px;
     border-radius:20px;
+    transition:0.3s;
 }
-.skills h3 {
-    color:#38bdf8;
+.skills span:hover {
+    transform:scale(1.1);
+    box-shadow:0 0 15px #38bdf8;
+}
+
+/* FADE IN */
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1;}
 }
 
 /* FOOTER */
@@ -111,7 +147,6 @@ footer {
 <div>
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
-<a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 </div>
 </nav>
@@ -120,8 +155,7 @@ footer {
 <h1>AI Developer Portfolio</h1>
 <p>Python | Machine Learning | Data Analysis</p>
 
-<!-- IMAGE -->
-<img src="images/profile.jpg" class="avatar" alt="Rajesh Kumar">
+<img src="images/profile.jpg" class="avatar">
 
 <br>
 <a href="resume/resume.pdf" class="btn" download>Download Resume</a>
@@ -130,23 +164,14 @@ footer {
 <section id="about" class="section">
 <div class="card">
 <h2>About Me</h2>
-<p>B.Tech AI student skilled in Python, Machine Learning, NLP, and data analysis. Passionate about building intelligent systems.</p>
+<p>AI student skilled in Python, Machine Learning, and data analysis.</p>
 </div>
 </section>
 
 <section id="projects" class="section">
 <div class="card">
 <h2>Projects</h2>
-<p><b>AI Sentiment Analysis:</b> NLP-based sentiment classifier.</p>
-<p><b>Student Prediction:</b> ML model to predict academic performance.</p>
-</div>
-</section>
-
-<section id="experience" class="section">
-<div class="card">
-<h2>Experience</h2>
-<p><b>AICTE Internship:</b> AI & Machine Learning training.</p>
-<p><b>IIIT Hyderabad Internship:</b> Real-world ML exposure.</p>
+<p>Sentiment Analysis | Student Prediction System</p>
 </div>
 </section>
 
@@ -155,19 +180,12 @@ footer {
 <h2>Skills</h2>
 
 <div class="skills">
-<h3>Technical</h3>
 <span>Python</span>
-<span>SAP ABAP</span>
 <span>Machine Learning</span>
 <span>NLP</span>
 <span>MySQL</span>
 <span>GitHub</span>
 <span>Excel</span>
-
-<h3>Soft Skills</h3>
-<span>Communication</span>
-<span>Team Work</span>
-<span>Time Management</span>
 </div>
 
 </div>
