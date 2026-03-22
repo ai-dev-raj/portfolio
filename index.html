@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rajesh Kumar | AI Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin:0;
     font-family:'Poppins', sans-serif;
-    color:white;
     background: linear-gradient(135deg,#020617,#0f172a,#1e293b);
+    color:white;
 }
 
 /* NAVBAR */
@@ -27,31 +27,35 @@ nav a {color:white; margin:0 10px; text-decoration:none;}
 /* HERO */
 .hero {
     text-align:center;
-    padding:100px 20px;
+    padding:80px 20px;
 }
 .hero h1 {
     font-family:'Orbitron';
-    font-size:45px;
+    font-size:40px;
     color:#38bdf8;
 }
 
-/* IMAGE */
+/* IMAGE PERFECT FIX */
 .avatar {
-    width:170px;
-    height:170px;
+    width:180px;
+    height:180px;
     border-radius:50%;
     object-fit:cover;
-    object-position: top center;
-    border:3px solid #38bdf8;
-    box-shadow:0 0 30px #38bdf8;
+    object-position: 50% 20%;
+    border:4px solid #38bdf8;
+    box-shadow:0 0 25px #38bdf8;
     margin-top:20px;
+    transition:0.3s;
+}
+.avatar:hover {
+    transform: scale(1.05);
 }
 
 /* SECTION */
 .section {
     max-width:900px;
     margin:auto;
-    padding:50px 20px;
+    padding:40px 20px;
 }
 
 /* CARD */
@@ -87,15 +91,9 @@ nav a {color:white; margin:0 10px; text-decoration:none;}
     padding:10px 15px;
     margin:5px;
     border-radius:20px;
-    transition:0.3s;
-}
-.skills span:hover {
-    transform: scale(1.1);
-    box-shadow:0 0 15px #38bdf8;
 }
 .skills h3 {
     color:#38bdf8;
-    margin-top:20px;
 }
 
 /* FOOTER */
@@ -122,7 +120,8 @@ footer {
 <h1>AI Developer Portfolio</h1>
 <p>Python | Machine Learning | Data Analysis</p>
 
-<img src="images/profile.jpg" class="avatar">
+<!-- IMAGE -->
+<img src="images/profile.jpg" class="avatar" alt="Rajesh Kumar">
 
 <br>
 <a href="resume/resume.pdf" class="btn" download>Download Resume</a>
@@ -138,21 +137,16 @@ footer {
 <section id="projects" class="section">
 <div class="card">
 <h2>Projects</h2>
-<p><b>AI Sentiment Analysis System:</b> NLP-based sentiment classification.</p>
-<p><b>Student Performance Prediction:</b> ML model to predict academic performance.</p>
+<p><b>AI Sentiment Analysis:</b> NLP-based sentiment classifier.</p>
+<p><b>Student Prediction:</b> ML model to predict academic performance.</p>
 </div>
 </section>
 
 <section id="experience" class="section">
 <div class="card">
 <h2>Experience</h2>
-
-<h3>AI & Machine Learning Intern (AICTE)</h3>
-<p>Worked on AI concepts and ML techniques during internship training.</p>
-
-<h3>Summer Internship – IIIT Hyderabad</h3>
-<p>Learned real-world machine learning applications and implementations.</p>
-
+<p><b>AICTE Internship:</b> AI & Machine Learning training.</p>
+<p><b>IIIT Hyderabad Internship:</b> Real-world ML exposure.</p>
 </div>
 </section>
 
@@ -161,24 +155,19 @@ footer {
 <h2>Skills</h2>
 
 <div class="skills">
-
-<h3>Technical Skills</h3>
+<h3>Technical</h3>
 <span>Python</span>
 <span>SAP ABAP</span>
 <span>Machine Learning</span>
-<span>NLP Basics</span>
-<span>Web Development</span>
+<span>NLP</span>
 <span>MySQL</span>
-<span>Git & GitHub</span>
-<span>MS Excel</span>
-<span>MS Word</span>
+<span>GitHub</span>
+<span>Excel</span>
 
 <h3>Soft Skills</h3>
-<span>Hardworking</span>
-<span>Time Management</span>
-<span>Team Work</span>
 <span>Communication</span>
-
+<span>Team Work</span>
+<span>Time Management</span>
 </div>
 
 </div>
